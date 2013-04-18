@@ -1,2 +1,22 @@
-<h1>Admin::Rss#edit</h1>
-<p>Find me in app/views/admin/rss/edit.html.erb</p>
+<h1>RSS編集</h1>
+<p><a href="/admin/rss/index">＜一覧</a></p>
+<form method="post" action="/admin/rss/edit/<%= @rss.id %>">
+	<table>
+		<tr><th>id</th><td><%= @rss.id %></td></tr>
+		<tr>
+			<th>名前</th>
+			<td>
+				<input type="text" name="name" value="<%= @rss.name %>" />
+			</td>
+		</tr>
+		<tr>
+			<th>RSS</th>
+			<td>
+				<input type="text" name="url" value="<%= @rss.url %>" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" value="編集" /></td>
+		</tr>
+	</table>
+</form>

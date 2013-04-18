@@ -1,2 +1,36 @@
-<h1>Admin::Rss#index</h1>
-<p>Find me in app/views/admin/rss/index.html.erb</p>
+<h1>RSS</h1>
+<h2>追加</h2>
+<form method="post" action="/admin/rss/new">
+	<table>
+		<tr>
+			<th>名前</th>
+			<td>
+				<input type="text" name="name" />
+			</td>
+		</tr>
+		<tr>
+			<th>RSS</th>
+			<td>
+				<input type="text" name="url" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" value="登録" /></td>
+		</tr>
+	</table>
+</form>
+<h2>一覧</h2>
+<table>
+	<tr>
+		<th>id</th><th>名前</th><th>削除</th><th>削除</th><th>作成日</th>
+	</tr>
+<% @rssList.each do |rss| %>
+	<tr>
+		<td><%= rss.id %></td>
+		<td><a href="<%= rss.url %>"><%= rss.name %></a></td>
+		<td><a href="/admin/rss/edit/<%= rss.id %>">編集</a></td>
+		<td><a href="/admin/rss/destroy/<%= rss.id %>">削除</a></td>
+		<td><%= rss.created_at.strftime('%Y/%m/%d %H:%M:%S')  %></td>
+	</tr>
+<% end %>
+</table>
