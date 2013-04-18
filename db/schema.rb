@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130418094053) do
+ActiveRecord::Schema.define(:version => 20130418120324) do
+
+  create_table "items", :force => true do |t|
+    t.integer  "rss_id"
+    t.string   "image_url"
+    t.string   "link"
+    t.integer  "pubdate"
+    t.string   "title"
+    t.integer  "tweet_count"
+    t.integer  "deleted"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "rsses", :force => true do |t|
     t.string   "name"

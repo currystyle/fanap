@@ -1,7 +1,7 @@
 class Admin::RssController < Admin::AdminApplicationController
   def index
     @rssList = Rss.order("id DESC")
-    
+    @itemList = Item.order("pubdate DESC")
   end
 
   def new

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  rss_id: 1
+  image_url: MyString
+  link: MyString
+  pubdate: 1
+  title: MyString
+  tweet_count: 1
+  deleted: 1
+
+two:
+  rss_id: 1
+  image_url: MyString
+  link: MyString
+  pubdate: 1
+  title: MyString
+  tweet_count: 1
+  deleted: 1
