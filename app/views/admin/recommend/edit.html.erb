@@ -1,0 +1,15 @@
+<h1>お勧めアプリ編集</h1>
+<p><a href="/admin/recommend/index">＜一覧へ戻る</a></p>
+<form method="POST" action="/admin/recommend/edit/<%= @recommend.id %>">
+<table>
+	<tr><th>名前</th><td><input type="text" name="name" value="<%= @recommend.name %>"></td></tr>
+	<tr><th>画像</th><td><input type="text" name="image" value="<%= @recommend.image %>"></td></tr>
+	<tr><th>リンク</th><td><input type="text" name="link" value="<%= @recommend.link %>"></td></tr>
+	<tr><th>詳細</th><td><textarea name="description"><%= @recommend.description %></textarea></td></tr>
+	<tr>
+		<td colspan="2"><input type="submit" value="登録" /></td>
+	</tr>	
+</table>
+</form>
+
+<%= debug(@affiliate) %>

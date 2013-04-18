@@ -1,8 +1,9 @@
 Fanap::Application.routes.draw do
-  get "item/update"
 
   match "/admin/rss(/:action(/:id))(.:format)" => 'admin/rss#:action'
   match "/admin/item(/:action(/:id))(.:format)" => 'admin/item#:action'
+  match "/admin/recommend(/:action(/:id))(.:format)" => 'admin/recommend#:action'
+  match "/admin/affiliate(/:action(/:id))(.:format)" => 'admin/affiliate#:action'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

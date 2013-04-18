@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130418120324) do
+ActiveRecord::Schema.define(:version => 20130418143429) do
+
+  create_table "affiliates", :force => true do |t|
+    t.integer  "priority"
+    t.string   "name"
+    t.string   "image"
+    t.string   "link"
+    t.text     "description"
+    t.integer  "deleted"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "items", :force => true do |t|
     t.integer  "rss_id"
@@ -20,6 +31,17 @@ ActiveRecord::Schema.define(:version => 20130418120324) do
     t.integer  "pubdate"
     t.string   "title"
     t.integer  "tweet_count"
+    t.integer  "deleted"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "recommends", :force => true do |t|
+    t.integer  "priority"
+    t.string   "name"
+    t.string   "image"
+    t.string   "link"
+    t.text     "description"
     t.integer  "deleted"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

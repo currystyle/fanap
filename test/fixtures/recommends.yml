@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  priority: 1
+  name: MyString
+  image: MyString
+  link: MyString
+  description: MyText
+  deleted: 1
+
+two:
+  priority: 1
+  name: MyString
+  image: MyString
+  link: MyString
+  description: MyText
+  deleted: 1

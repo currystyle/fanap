@@ -1,0 +1,32 @@
+<h1>お勧めアプリ</h1>
+<h2>登録</h2>
+<form method="POST" action="/admin/recommend/new">
+<table>
+	<tr><th>名前</th><td><input type="text" name="name"></td></tr>
+	<tr><th>画像</th><td><input type="text" name="image"></td></tr>
+	<tr><th>リンク</th><td><input type="text" name="link"></td></tr>
+	<tr><th>詳細</th><td><textarea name="description"></textarea></td></tr>
+	<tr>
+		<td colspan="2"><input type="submit" value="登録" /></td>
+	</tr>	
+</table>
+</form>
+<h2>一覧</h2>
+<table>
+	<tr><th>id</th><th>名前</th><th>編集</th><th>削除</th></tr>
+	<% @recommendList.each do |recommend| %>
+		<tr>
+			<td><%= recommend.id %></td>
+			<td>
+				<% unless recommend.image.nil? %>
+					<img src="<%= recommend.image %>" style="height:200px;" /><br />				
+				<% end %>
+				<a href="<%= recommend.link %>" target="_blank"><%= recommend.name %></a>
+			</td>
+			<td><a href="/admin/recommend/edit/<%= recommend.id %>">編集</a></td>
+			<td><a href="/admin/recommend/destroy/<%= recommend.id %>">削除</a></td>
+		</tr>		
+	<% end %>
+</table>
+
+<%= debug(@affiList) %>
