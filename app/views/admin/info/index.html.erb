@@ -1,0 +1,48 @@
+<h1>お知らせ</h1>
+<h2>登録</h2>
+<form action="/admin/info/new" method="post">
+	<table>
+		<tr>
+			<th>タイトル</th><td><input type="text" name="title" /></td>
+		</tr>
+		<tr>
+			<th>画像</th><td><input type="text" name="image" /></td>
+		</tr>
+		<tr>
+			<th>URL</th><td><input type="text" name="url" /></td>
+		</tr>
+		<tr>
+			<th>appStore?</th><td><input type="checkbox" name="app_store" value="1" id="appStore" /><label for="appStore">appstore</label></td>
+		</tr>
+		<tr>
+			<th>詳細</th>
+			<td>
+				<textarea name="description"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" value="登録"></td>
+		</tr>
+	</table>
+</form>
+
+<h2>一覧</h2>
+<table>
+	<tr>
+		<th>id</th><th>タイトル</th><th>appstore?</th><th>編集</th><th>削除</th>
+	</tr>
+	<% @infoList.each do |info| %>
+		<tr>
+			<td><%= info.id %></td>
+			<td>
+				<% unless info.image.nil? %>
+					<img src="<%= info.image %>" style="height:100px;" /><br />				
+				<% end %>
+				<a href="<%= info.url %>" target="_blank"><%= info.title %></a>
+			</td>
+			<td><%= info.app_store %></td>
+			<td><a href="/admin/info/edit/<%= info.id %>">編集</a></td>
+			<td><a href="/admin/info/destroy/<%= info.id %>">削除</a></td>
+		</tr>	
+	<% end %>
+</table>

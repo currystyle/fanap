@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  url: MyString
+  app_store: 1
+  image: MyString
+  description: MyText
+  deleted: 1
+  priority: 1
+
+two:
+  title: MyString
+  url: MyString
+  app_store: 1
+  image: MyString
+  description: MyText
+  deleted: 1
+  priority: 1

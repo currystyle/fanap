@@ -1,0 +1,32 @@
+<h1>お知らせ編集</h1>
+<form action="/admin/info/edit/<%= @info.id %>" method="post">
+	<table>
+		<tr>
+			<th>タイトル</th><td><input type="text" name="title" value="<%= @info.title %>" /></td>
+		</tr>
+		<tr>
+			<th>画像</th><td><input type="text" name="image" value="<%= @info.image %>" /></td>
+		</tr>
+		<tr>
+			<th>URL</th><td><input type="text" name="url" value="<%= @info.url %>" /></td>
+		</tr>
+		<tr>
+			<th>appStore?</th>
+			<td>
+				<input type="checkbox" name="app_store" value="1" id="appStore" <% if @info.app_store == 1 %>checked="checked"<% end %> />
+				<label for="appStore">appstore</label>
+			</td>
+		</tr>
+		<tr>
+			<th>詳細</th>
+			<td>
+				<textarea name="description"><%= @info.description %></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" value="登録"></td>
+		</tr>
+	</table>
+</form>
+
+<%= debug(@info) %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130418143429) do
+ActiveRecord::Schema.define(:version => 20130419092501) do
 
   create_table "affiliates", :force => true do |t|
     t.integer  "priority"
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(:version => 20130418143429) do
     t.string   "link"
     t.text     "description"
     t.integer  "deleted"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "infos", :force => true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.integer  "app_store"
+    t.string   "image"
+    t.text     "description"
+    t.integer  "deleted"
+    t.integer  "priority"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
