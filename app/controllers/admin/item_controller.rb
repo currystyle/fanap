@@ -115,6 +115,8 @@ class Admin::ItemController < ApplicationController
     model.rss_id = rssId
     model.title = item.title.to_s.gsub(/<\/?[^>]*>/, "")
     model.tweet_count = 0
+    model.deleted = 0
+    puts model.title
     
     if model.title.include?("PR:")
       return
