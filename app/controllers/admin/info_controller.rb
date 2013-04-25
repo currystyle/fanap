@@ -1,6 +1,6 @@
 class Admin::InfoController < ApplicationController
   def index
-    @infoList = Info.order("id DESC")
+    @infoList = Info.where("deleted = 0").order("id DESC")
   end
 
   def new
@@ -12,7 +12,8 @@ class Admin::InfoController < ApplicationController
 
   def destroy
     info = Info.find(params[:id])
-    info.destroy
+    info.deleted = 1;
+    info.save
     redirect_to "/admin/info/index"
   end
 

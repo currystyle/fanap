@@ -1,10 +1,16 @@
 Fanap::Application.routes.draw do
 
+  get "data/update"
+
+  # admin
   match "/admin/rss(/:action(/:id))(.:format)" => 'admin/rss#:action'
   match "/admin/item(/:action(/:id))(.:format)" => 'admin/item#:action'
   match "/admin/recommend(/:action(/:id))(.:format)" => 'admin/recommend#:action'
   match "/admin/affiliate(/:action(/:id))(.:format)" => 'admin/affiliate#:action'
   match "/admin/info(/:action(/:id))(.:format)" => 'admin/info#:action'
+  
+  # api
+  match "/api/data(/:action(/:lastupdated))(.:format)" => 'api/data#:action'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

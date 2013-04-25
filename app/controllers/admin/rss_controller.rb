@@ -1,11 +1,11 @@
 class Admin::RssController < Admin::AdminApplicationController
   def index
-    @rssList = Rss.order("id DESC")
-    @itemList = Item.order("pubdate DESC")
+    @rssList = Rss.where("deleted == 0").order("id DESC")
+    @itemList = Item.where("deleted == 0").order("pubdate DESC")
   end
 
   def new
-    rss = Rss.new(:name=>params[:name], :url=>params[:url])
+    rss = Rss.new(:name=>params[:name], :url=>params[:url], :deleted=>0)
     rss.save
     redirect_to "/admin/rss/index"
   end
@@ -20,8 +20,19 @@ class Admin::RssController < Admin::AdminApplicationController
   end
 
   def destroy
-    rss = Rss.find(params[:id])
-    rss.destroy
+    rssId = params[:id];
+    
+    # items削除
+    nowTime = Time.now.to_s(:db)
+    args = ["UPDATE items SET deleted = 1, updated_at = ? WHERE rss_id = ?", nowTime, rssId]
+    sql = ActiveRecord::Base.send(:sanitize_sql_array, args)
+    Item.connection.execute(sql)
+    
+    # rss削除
+    rss = Rss.find(rssId)
+    rss.deleted = 1;
+    rss.save
+    
     redirect_to "/admin/rss/index"
   end
 end

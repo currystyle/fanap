@@ -1,6 +1,6 @@
 class Admin::RecommendController < ApplicationController
   def index
-    @recommendList = Recommend.order("id DESC")
+    @recommendList = Recommend.where("deleted = 0").order("id DESC")
   end
 
   def new
@@ -9,6 +9,7 @@ class Admin::RecommendController < ApplicationController
     recommend.image = params[:image]
     recommend.link = params[:link]
     recommend.description = params[:description]
+    recommend.deleted = 0;
     recommend.save
     redirect_to "/admin/recommend/index"
   end
@@ -26,7 +27,7 @@ class Admin::RecommendController < ApplicationController
 
   def destroy
     recommend = Recommend.find(params[:id])
-    recommend.destroy
+    recommend.de
     redirect_to "/admin/recommend/index"
   end
 end

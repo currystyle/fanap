@@ -1,6 +1,6 @@
 class Admin::AffiliateController < ApplicationController
   def index
-    @affiList = Affiliate.order("id DESC")
+    @affiList = Affiliate.where("deleted = 0").order("id DESC")
   end
 
   def new
@@ -9,6 +9,7 @@ class Admin::AffiliateController < ApplicationController
     affiliate.image = params[:image]
     affiliate.link = params[:link]
     affiliate.description = params[:description]
+    affiliate.deleted = 0
     affiliate.save
     redirect_to "/admin/affiliate/index"
   end
@@ -26,7 +27,8 @@ class Admin::AffiliateController < ApplicationController
 
   def destroy
     affiliate = Affiliate.find(params[:id])
-    affiliate.destroy
+    affiliate.deleted = 1
+    affiliate.save
     redirect_to "/admin/affiliate/index"
   end
 end

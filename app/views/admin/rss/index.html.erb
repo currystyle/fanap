@@ -39,7 +39,7 @@
 <p><a href="/admin/item/update">更新</a></p>
 <table>
 	<tr>
-		<th>id</th><th>rssId</th><th>タイトル</th><th>日付</th>
+		<th>id</th><th>rssId</th><th>タイトル</th><th>日付</th><th>削除</th>
 	</tr>
 	<% @itemList.each do |item| %>
 		<tr>
@@ -52,6 +52,7 @@
 				<a href="<%= item.link %>" target="_blank"><%= item.title %></a>
 			</td>
 			<td><%= Time.at(item.pubdate).strftime('%Y/%m/%d %H:%M:%S') %></td>
+			<td><a href="/admin/item/destroy/<%= item.id %>">削除</a></td>
 		</tr>	
 	<% end %>
 </table>

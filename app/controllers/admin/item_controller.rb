@@ -1,4 +1,13 @@
 class Admin::ItemController < ApplicationController
+  
+  def destroy
+    item = Item.find(params[:id])
+    item.deleted = 1
+    item.save
+    
+    redirect_to "/admin/rss/index"
+  end
+  
   def update
     rssList = Rss.order("id DESC")
     @rssList = rssList
@@ -53,6 +62,7 @@ class Admin::ItemController < ApplicationController
     redirect_to "/admin/rss/index"
   end
   
+# private ==========================================
   private
   
   def saveRssItem(rss, rssId)
