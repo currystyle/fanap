@@ -1,2 +1,40 @@
-<h1>Admin::User#edit</h1>
-<p>Find me in app/views/admin/user/edit.html.erb</p>
+<h1>ユーザ編集</h1>
+<form action="/admin/user/edit/<%= @user.id %>" method="POST">
+	<table>
+		<tr>
+			<th>deviceToken</th>
+			<td><%= @user.device_token %></td>
+		</tr>
+		<tr>
+			<th>ニックネーム</th><td><input type="text" name="name" value="<%= @user.name %>"></td>
+		</tr>
+		<tr>
+			<th>年齢</th><td><select name="age">
+				<% for i in 12..70 do %>
+					<option value="<%= i %>"><%= i %></option>
+				<% end %>
+			</select></td>
+		</tr>
+		<tr>
+			<th>身長</th><td><select name="height">
+				<% for i in 140..190 do %>
+					<option value="<%= i %>"><%= i %></option>
+				<% end %>
+			</select></td>
+		</tr>
+		<tr>
+			<th>職業</th><td><input type="text" name="work" value="<%= @user.work %>"></td>
+		</tr>
+		<tr>
+			<th>URL(ブログ等)</th><td><input type="text" name="url" value="<%= @user.url %>"></td>
+		</tr>
+		<tr>
+			<th>メッセージ</th><td><textarea name="message"><%= @user.message %></textarea></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" name="edit" value="編集" />
+			</td>
+		</tr>
+	</table>
+</form>

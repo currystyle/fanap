@@ -1,0 +1,32 @@
+<h1>通知</h1>
+<table>
+	<tr><th>deviceToken</th><td><%= @user.device_token %></td></tr>
+	<tr><th>ニックネーム</th><td><%= @user.name %></td></tr>
+</table>
+
+<h2>通知内容</h2>
+<form action="/admin/user/push/<%= @user.id %>" method="POST">
+	<table>
+		<tr>
+			<th>バッジ</th>
+			<td>
+				<select name="badge">
+					<% for i in 0..50 %>
+						<option value="<%= i %>"><%= i %></option>
+					<% end %>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th>文言</th>
+			<td>
+				<textarea name="alert"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" name="sendPush" value="通知">
+			</td>
+		</tr>
+	</table>
+</form>
