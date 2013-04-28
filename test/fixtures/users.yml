@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  device_token: MyString
+  name: MyString
+  height: 1
+  work: MyString
+  age: 1
+  url: MyString
+  message: MyText
+
+two:
+  device_token: MyString
+  name: MyString
+  height: 1
+  work: MyString
+  age: 1
+  url: MyString
+  message: MyText

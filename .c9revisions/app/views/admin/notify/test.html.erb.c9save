@@ -1,0 +1,2 @@
+{"ts":1367075520782,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"<h1>Admin::Notify#test</h1>\n<p>Find me in app/views/admin/notify/test.html.erb</p>\n"]],"start1":0,"start2":0,"length1":0,"length2":83}]],"length":83}
+{"contributors":[],"silentsave":false,"ts":1367075590538,"patch":[[{"diffs":[[0,"erb</p>\n"],[1,"<%= debug(@userList) %>"]],"start1":75,"start2":75,"length1":8,"length2":31}]],"length":106,"saved":false}

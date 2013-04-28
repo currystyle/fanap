@@ -1,0 +1,1 @@
+{"ts":1367066301080,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"class User < ActiveRecord::Base\n  attr_accessible :age, :device_token, :height, :message, :name, :url, :work\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":113}]],"length":113}

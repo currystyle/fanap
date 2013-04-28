@@ -1,0 +1,3 @@
+{"ts":1367069269360,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"<h1>Api::User#new</h1>\n<p>Find me in app/views/api/user/new.html.erb</p>\n"]],"start1":0,"start2":0,"length1":0,"length2":73}]],"length":73}
+{"contributors":[],"silentsave":false,"ts":1367069340057,"patch":[[{"diffs":[[0,"\n<p>"],[-1,"Find me in app/views/api/user/new.html.erb"],[1,"<%= @err %>"],[0,"</p>"]],"start1":22,"start2":22,"length1":50,"length2":19}]],"length":42,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1367072449581,"patch":[[{"diffs":[[0,"h1>\n"],[-1,"<p><%= @err %></p>"],[0,"\n"]],"start1":19,"start2":19,"length1":23,"length2":5}]],"length":24,"saved":false}
