@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130419092501) do
+ActiveRecord::Schema.define(:version => 20130427123811) do
 
   create_table "affiliates", :force => true do |t|
     t.integer  "priority"
@@ -65,6 +65,18 @@ ActiveRecord::Schema.define(:version => 20130419092501) do
     t.integer  "deleted"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "device_token"
+    t.string   "name"
+    t.integer  "height"
+    t.string   "work"
+    t.integer  "age"
+    t.string   "url"
+    t.text     "message"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end

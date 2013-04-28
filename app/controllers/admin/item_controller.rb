@@ -26,7 +26,7 @@ class Admin::ItemController < ApplicationController
     end
                 
     lock = Monitor.new
-    threadNum = 5
+    threadNum = 3
     puts queue.size()
     threads = []
     for i in 0..threadNum do
